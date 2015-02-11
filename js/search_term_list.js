@@ -1,20 +1,7 @@
 /** @jsx React.DOM */
 
 var React = require('react/addons');
-var SearchTerm = React.createClass({
-  render: function() {
-    var classes = React.addons.classSet({
-      'btn': true,
-      'btn-default': true,
-      'btn-success': this.props.isSelected,
-    });
-    return (
-      <a className={classes}>
-      {this.props.term}
-      </a>
-      );
-  }
-});
+var SearchTerm = require('./search_term');
 
 var SearchTermList = React.createClass({
   getInitialState:function(){
@@ -34,9 +21,9 @@ var SearchTermList = React.createClass({
       );
   },
   handleClick: function(event) {
+    console.log('clicked event was raised', event.target.text)
     this.setState({selectedSearchTerm:event.target.text});
-    searchByTerm(event.target.text);
   }
 });
 
-module.exports = SearchTerm;
+module.exports = SearchTermList;

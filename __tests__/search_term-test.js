@@ -1,10 +1,10 @@
 /** @jsx React.DOM */
 
-jest.dontMock('../js/search_terms.js');
+jest.dontMock('../js/search_term.js');
 describe('SearchTerm', function() {
   it('button class if not selected', function() {
     var React = require('react/addons');
-    var SearchTerm = require('../js/search_terms.js');
+    var SearchTerm = require('../js/search_term.js');
     var TestUtils = React.addons.TestUtils;
 
     var search_term = TestUtils.renderIntoDocument(
@@ -19,7 +19,7 @@ describe('SearchTerm', function() {
   });
   it('button class if selected', function() {
     var React = require('react/addons');
-    var SearchTerm = require('../js/search_terms.js');
+    var SearchTerm = require('../js/search_term.js');
     var TestUtils = React.addons.TestUtils;
 
     var search_term = TestUtils.renderIntoDocument(
