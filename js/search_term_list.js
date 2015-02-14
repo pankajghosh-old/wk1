@@ -10,19 +10,20 @@ var SearchTermList = React.createClass({
   render: function() {
     var searchTermNodes = this.props.data.map(function (searchTerm) {
       return (
-        <SearchTerm term={searchTerm.term} key={searchTerm.term} isSelected={searchTerm.term===this.state.selectedSearchTerm}>
+        <SearchTerm term={searchTerm.term} key={searchTerm.term} 
+                    isSelected={searchTerm.term===this.state.selectedSearchTerm} 
+                    parent_click_handler={this.handle_child_click}>
         </SearchTerm>
         );
     }.bind(this));
     return (
-      <div className="searchTerms" onClick={this.handleClick}>
+      <div className="searchTerms">
       {searchTermNodes}
       </div>
       );
   },
-  handleClick: function(event) {
-    console.log('clicked event was raised', event.target.text)
-    this.setState({selectedSearchTerm:event.target.text});
+  handle_child_click: function(search_term_clicked) {
+    this.setState({selectedSearchTerm:search_term_clicked});
   }
 });
 

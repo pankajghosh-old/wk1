@@ -9,11 +9,15 @@ var SearchTerm = React.createClass({
       'btn-success': this.props.isSelected,
     });
     return (
-      <a className={classes}>
+      <a className={classes} onClick={this.handleClick}>
       {this.props.term}
       </a>
       );
+  },
+  handleClick: function(event) {
+    this.props.parent_click_handler(this.props.term);
   }
+
 });
 
 module.exports = SearchTerm;
